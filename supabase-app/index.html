@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102c40">
+  <title>Student Concerns</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <section id="auth-screen" class="auth-screen">
+      <div class="auth-brand"><span class="brand-mark">SC</span><span>Student Concerns</span></div>
+      <div class="auth-card">
+        <p class="eyebrow">STUDENT SUPPORT PORTAL</p>
+        <h1 id="auth-title">Welcome back</h1>
+        <p id="auth-copy" class="muted">Sign in to submit and follow concerns.</p>
+        <div id="auth-message" class="notice hidden" role="status"></div>
+        <form id="auth-form" class="stack">
+          <label class="hidden" id="name-wrap">Full name<input id="auth-name" autocomplete="name"></label>
+          <label>Email<input id="auth-email" type="email" autocomplete="email" required></label>
+          <label>Password<input id="auth-password" type="password" autocomplete="current-password" minlength="8" required></label>
+          <div id="signup-fields" class="stack hidden">
+            <label>Account type<select id="auth-role"><option value="student">Student</option><option value="staff">Staff applicant</option></select></label>
+            <label>Student number<input id="auth-student-number" maxlength="50"></label>
+            <label>Course<input id="auth-course" maxlength="120"></label>
+            <label>Year level<input id="auth-year" maxlength="30"></label>
+            <label>Position (staff applicants)<input id="auth-position" maxlength="120"></label>
+            <label>Department (optional)<select id="auth-department"><option value="">Choose later</option></select></label>
+          </div>
+          <button class="button primary" id="auth-submit">Sign in</button>
+        </form>
+        <div class="auth-links"><button class="link-button" id="toggle-auth">Create an account</button><button class="link-button" id="reset-password">Forgot password?</button></div>
+      </div>
+      <p class="auth-foot">A secure space to be heard and get support.</p>
+    </section>
+
+    <section id="workspace" class="workspace hidden">
+      <aside class="sidebar">
+        <div class="sidebar-brand"><span class="brand-mark">SC</span><span>Student<br>Concerns</span></div>
+        <div class="sidebar-label">WORKSPACE</div>
+        <nav id="navigation" class="nav-list"></nav>
+        <div class="sidebar-bottom"><div id="user-chip" class="user-chip"></div><button id="sign-out" class="nav-item signout">↪ <span>Sign out</span></button></div>
+      </aside>
+      <main class="main-area">
+        <header class="topbar"><div><span class="eyebrow" id="role-label"></span><h1 id="page-title">Dashboard</h1></div><button class="icon-button" id="notifications-button" title="Notifications">♧<span id="notification-count" class="count hidden"></span></button></header>
+        <div id="global-message" class="notice hidden" role="status"></div>
+        <section id="page-content" class="page-content" aria-live="polite"></section>
+      </main>
+    </section>
+  </div>
+  <dialog id="detail-dialog" class="dialog"><div id="dialog-content"></div></dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
